@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Shein → PhotoRoom Describe Any Change",
+  "version": "1.0.0",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://*.shein.com/*",
+    "https://app.photoroom.com/*",
+    "http://127.0.0.1:8787/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.shein.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
